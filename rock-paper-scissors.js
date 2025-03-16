@@ -15,6 +15,9 @@ console.log("Hello, World!")
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
 
+//  "Rock beats scissors, scissors beat paper, and paper beats rock.""
+    // How many variants are there? 9
+
 // new function named playGame
     // should contain playRound and both score variables
     // Play 5 rounds
