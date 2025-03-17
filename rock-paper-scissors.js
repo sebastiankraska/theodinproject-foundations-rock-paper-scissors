@@ -1,5 +1,17 @@
 console.log("Hello, World!")
 
+// mapping game rules
+const gameRules = new Map([
+    ["rock", "scissors"], // rock beats scissors
+    ["paper", "rock"], // paper beats rock
+    ["scissors", "paper"] // scissors beats paper
+  ]);
+
+// testing 
+for (const [key, value] of gameRules.entries()) {
+    console.log(`${key} beats ${value}`);
+}
+
 // function getComputerChoice
     // must return rock, paper or scisscors
     // uses Math.random - how to use this for 3 choices?
