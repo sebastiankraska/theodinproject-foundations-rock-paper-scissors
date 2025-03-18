@@ -23,8 +23,8 @@ function getComputerChoice() {
 }
 
 // For testing purposes
-// const computerChoice = getComputerChoice()
-const computerChoice = "rock"
+const computerChoice = getComputerChoice()
+// const computerChoice = "rock"
 
 // testing random Computer Choice
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
@@ -48,8 +48,8 @@ function getUserChoice() {
 }
 
 // Disabled for testing purposes
-// const userChoice = getUserChoice()
-userChoice = "scissors"
+const userChoice = getUserChoice()
+// userChoice = "scissors"
 
 // Keep track of score with humanScore and computerScore
 
@@ -63,9 +63,9 @@ userChoice = "scissors"
 // Disabled for testing purposes
 if (computerChoice == userChoice) {
     console.log("Tie!")
-} else if (gameRules.get(computerChoice) == userChoice) {
-    console.log("You win! " + userChoice + " beats " + computerChoice)
 } else if (gameRules.get(userChoice) == computerChoice) {
+    console.log("You win! " + userChoice + " beats " + computerChoice)
+} else if (gameRules.get(computerChoice) == userChoice) {
     console.log("You lose! " + computerChoice + " beats " + userChoice)
 } else {
     console.log("Invalid combination / Error")
