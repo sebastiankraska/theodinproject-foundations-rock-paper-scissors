@@ -62,11 +62,11 @@ const userChoice = getUserChoice()
     // How many variants are there? 9
 // Disabled for testing purposes
 if (computerChoice == userChoice) {
-    console.log("Tie!")
+    console.log("Tie! Computer and user chose " + userChoice)
 } else if (gameRules.get(userChoice) == computerChoice) {
-    console.log("You win! " + userChoice + " beats " + computerChoice)
+    console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)")
 } else if (gameRules.get(computerChoice) == userChoice) {
-    console.log("You lose! " + computerChoice + " beats " + userChoice)
+    console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)")
 } else {
     console.log("Invalid combination / Error")
 }
