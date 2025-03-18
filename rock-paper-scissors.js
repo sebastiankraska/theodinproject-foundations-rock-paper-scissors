@@ -49,6 +49,7 @@ function getUserChoice() {
 
 // Disabled for testing purposes
 // const userChoice = getUserChoice()
+userChoice = "scissors"
 
 // Keep track of score with humanScore and computerScore
 
@@ -60,11 +61,13 @@ function getUserChoice() {
 //  "Rock beats scissors, scissors beat paper, and paper beats rock.""
     // How many variants are there? 9
 // Disabled for testing purposes
-// if (computerChoice == userChoice) {
-//     console.log("Tie!")
-// } 
+if (computerChoice == userChoice) {
+    console.log("Tie!")
+} else if (gameRules.get(computerChoice) == userChoice) {
+    console.log("You win! " + userChoice + " beats " + computerChoice)
+}
 
-console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
+// console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
 
 // new function named playGame
     // should contain playRound and both score variables
