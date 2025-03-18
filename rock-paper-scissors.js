@@ -65,6 +65,10 @@ if (computerChoice == userChoice) {
     console.log("Tie!")
 } else if (gameRules.get(computerChoice) == userChoice) {
     console.log("You win! " + userChoice + " beats " + computerChoice)
+} else if (gameRules.get(userChoice) == computerChoice) {
+    console.log("You lose! " + computerChoice + " beats " + userChoice)
+} else {
+    console.log("Invalid combination / Error")
 }
 
 // console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
