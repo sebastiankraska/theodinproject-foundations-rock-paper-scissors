@@ -41,6 +41,7 @@ function getUserChoice() {
     const userChoice = prompt("Enter your choice (rock, paper, scissors): ");
     // testing:
     // console.log("User chose:" + userChoice)
+    return userChoice;
 }
 
 getUserChoice()
