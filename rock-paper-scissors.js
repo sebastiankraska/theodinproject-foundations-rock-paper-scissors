@@ -15,7 +15,6 @@ for (const [key, value] of gameRules.entries()) {
     console.log(`${key} beats ${value}`);
 }
 
-
 // function getComputerChoice
     // must return rock, paper or scisscors
 function getComputerChoice() {
@@ -48,7 +47,8 @@ function getUserChoice() {
     return choice;
 }
 
-const userChoice = getUserChoice()
+// Disabled for testing purposes
+// const userChoice = getUserChoice()
 
 // Keep track of score with humanScore and computerScore
 
@@ -59,9 +59,12 @@ const userChoice = getUserChoice()
 
 //  "Rock beats scissors, scissors beat paper, and paper beats rock.""
     // How many variants are there? 9
-if (computerChoice == userChoice) {
-    console.log("Tie!")
-}
+// Disabled for testing purposes
+// if (computerChoice == userChoice) {
+//     console.log("Tie!")
+// } 
+
+console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
 
 // new function named playGame
     // should contain playRound and both score variables
