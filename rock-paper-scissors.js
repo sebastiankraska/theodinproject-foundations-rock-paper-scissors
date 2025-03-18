@@ -78,7 +78,6 @@ function playRound() {
         console.log("Invalid combination / Error")
     }
 
-
 }
 
 // for testing 
