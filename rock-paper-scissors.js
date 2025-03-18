@@ -28,15 +28,15 @@ const computerChoice = getComputerChoice()
 
 
 // testing random Computer Choice
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
+// console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 
 // function getHumanChoice
     // use prompt to get users input
@@ -52,9 +52,7 @@ function getUserChoice() {
 // userChoice = "scissors"
 const userChoice = getUserChoice()
 
-// Keep track of score with humanScore and computerScore
-let humanScore = 0;
-let computerScore = 0;
+
 
 // new function named playRound
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
@@ -80,8 +78,8 @@ function playRound(userChoice, computerChoice) {
     console.log("Computer Score: " + computerScore)
 }
 
-playRound(userChoice, computerChoice)
-
+// for testing 
+// playRound(userChoice, computerChoice)
 
 
 // console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
@@ -89,3 +87,10 @@ playRound(userChoice, computerChoice)
 // new function named playGame
     // should contain playRound and both score variables
     // Play 5 rounds
+function playGame() {
+    // Keep track of score with humanScore and computerScore
+    let humanScore = 0;
+    let computerScore = 0;
+}
+
+playGame();
