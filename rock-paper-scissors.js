@@ -34,10 +34,16 @@ console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissor
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 
-
 // function getHumanChoice
     // use prompt to get users input
     // assume user always enters valid strings
+function getUserChoice() {
+    const userChoice = prompt("Enter your choice (rock, paper, scissors): ");
+    // testing:
+    // console.log("User chose:" + userChoice)
+}
+
+getUserChoice()
 
 // Keep track of score with humanScore and computerScore
 
