@@ -23,6 +23,10 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
+// For testing purposes
+// const computerChoice = getComputerChoice()
+const computerChoice = "rock"
+
 // testing random Computer Choice
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
@@ -38,13 +42,13 @@ console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissor
     // use prompt to get users input
     // assume user always enters valid strings
 function getUserChoice() {
-    const userChoice = prompt("Enter your choice (rock, paper, scissors): ");
+    const choice = prompt("Enter your choice (rock, paper, scissors): ");
     // testing:
     // console.log("User chose:" + userChoice)
-    return userChoice;
+    return choice;
 }
 
-getUserChoice()
+const userChoice = getUserChoice()
 
 // Keep track of score with humanScore and computerScore
 
@@ -55,6 +59,9 @@ getUserChoice()
 
 //  "Rock beats scissors, scissors beat paper, and paper beats rock.""
     // How many variants are there? 9
+if (computerChoice == userChoice) {
+    console.log("Tie!")
+}
 
 // new function named playGame
     // should contain playRound and both score variables
