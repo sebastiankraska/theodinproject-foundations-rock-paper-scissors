@@ -58,7 +58,7 @@ function getUserChoice() {
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
-function playRound() {
+function playRound(scores) {
 
     const computerChoice = getComputerChoice();
     const userChoice = getUserChoice();
@@ -70,10 +70,10 @@ function playRound() {
         console.log("Tie! Computer and user chose " + userChoice);
     } else if (gameRules.get(userChoice) == computerChoice) {
         console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
-        humanScore++;
+        scores.human++;
     } else if (gameRules.get(computerChoice) == userChoice) {
         console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
-        computerScore++;
+        scores.computer++;
     } else {
         console.log("Invalid combination / Error")
     }
@@ -83,7 +83,6 @@ function playRound() {
 // for testing 
 // playRound(userChoice, computerChoice)
 
-
 // console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
 
 // new function named playGame
@@ -91,15 +90,14 @@ function playRound() {
     // Play 5 rounds
 function playGame() {
     // Keep track of score with humanScore and computerScore
-    let humanScore = 0;
-    let computerScore = 0;
+    const scores = { human: 0, computer: 0 };
 
     for (let i = 0; i < 5; i++) {
-        playRound();
+        playRound(scores);
     };
 
-    console.log("Human Score: " + humanScore);
-    console.log("Computer Score: " + computerScore);
+    console.log("Human Score: " + scores.human);
+    console.log("Computer Score: " + scores.computer);
 }
 
 playGame();
