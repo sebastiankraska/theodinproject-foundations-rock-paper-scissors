@@ -15,6 +15,9 @@ for (const [key, value] of gameRules.entries()) {
     console.log(`${key} beats ${value}`);
 }
 
+
+// function getComputerChoice
+    // must return rock, paper or scisscors
 function getComputerChoice() {
     const randomIndex = Math.floor(Math.random() * choices.length); // Math random creates random number between 0 and 1, length equals 3, example: Math.random creates 0.8112313213 * 3 = 2.4...., Math Floor = 2, index 2 means the third item in the array
     return choices[randomIndex];
@@ -30,10 +33,6 @@ console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissor
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
-
-// function getComputerChoice
-    // must return rock, paper or scisscors
-    // uses Math.random - how to use this for 3 choices?
 
 
 // function getHumanChoice
