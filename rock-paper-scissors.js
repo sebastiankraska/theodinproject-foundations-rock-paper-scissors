@@ -23,8 +23,9 @@ function getComputerChoice() {
 }
 
 // For testing purposes
-const computerChoice = getComputerChoice()
 // const computerChoice = "rock"
+const computerChoice = getComputerChoice()
+
 
 // testing random Computer Choice
 console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
@@ -48,8 +49,8 @@ function getUserChoice() {
 }
 
 // Disabled for testing purposes
-const userChoice = getUserChoice()
 // userChoice = "scissors"
+const userChoice = getUserChoice()
 
 // Keep track of score with humanScore and computerScore
 
@@ -58,9 +59,7 @@ const userChoice = getUserChoice()
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
 
-//  "Rock beats scissors, scissors beat paper, and paper beats rock.""
-    // How many variants are there? 9
-// Disabled for testing purposes
+//  Evaluate winner / loser / ties / invalid combinations
 if (computerChoice == userChoice) {
     console.log("Tie! Computer and user chose " + userChoice)
 } else if (gameRules.get(userChoice) == computerChoice) {
