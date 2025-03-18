@@ -53,6 +53,8 @@ function getUserChoice() {
 const userChoice = getUserChoice()
 
 // Keep track of score with humanScore and computerScore
+let humanScore = 0;
+let computerScore = 0;
 
 // new function named playRound
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
@@ -69,6 +71,9 @@ if (computerChoice == userChoice) {
 } else {
     console.log("Invalid combination / Error")
 }
+
+console.log("Human Score: " + humanScore);
+console.log("Computer Score: " + computerScore)
 
 // console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
 
