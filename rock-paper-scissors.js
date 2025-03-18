@@ -74,8 +74,7 @@ function playRound(userChoice, computerChoice) {
         console.log("Invalid combination / Error")
     }
 
-    console.log("Human Score: " + humanScore);
-    console.log("Computer Score: " + computerScore)
+
 }
 
 // for testing 
@@ -91,6 +90,13 @@ function playGame() {
     // Keep track of score with humanScore and computerScore
     let humanScore = 0;
     let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playRound(userChoice, computerChoice);
+    };
+
+    console.log("Human Score: " + humanScore);
+    console.log("Computer Score: " + computerScore);
 }
 
 playGame();
