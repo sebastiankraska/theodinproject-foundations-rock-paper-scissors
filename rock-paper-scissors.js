@@ -60,6 +60,11 @@ let computerScore = 0;
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
+function playRound(userChoice, computerChoice) {
+    console.log("Result of playRound function is: " + userChoice + " and " + computerChoice);
+}
+
+playRound(userChoice, computerChoice)
 
 //  Evaluate winner / loser / ties / invalid combinations
 if (computerChoice == userChoice) {
