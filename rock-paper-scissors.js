@@ -68,6 +68,7 @@ function playRound(scores) {
     //  Evaluate winner / loser / ties / invalid combinations
     if (computerChoice == userChoice) {
         console.log("Tie! Computer and user chose " + userChoice);
+        scores.ties++;
     } else if (gameRules.get(userChoice) == computerChoice) {
         console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
         scores.human++;
@@ -75,7 +76,8 @@ function playRound(scores) {
         console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
         scores.computer++;
     } else {
-        console.log("Invalid combination / Error")
+        console.log("Invalid combination / Error");
+        scores.errors++;
     }
 
 }
@@ -90,7 +92,7 @@ function playRound(scores) {
     // Play 5 rounds
 function playGame() {
     // Keep track of score with humanScore and computerScore
-    const scores = { human: 0, computer: 0 };
+    const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
 
     for (let i = 0; i < 5; i++) {
         playRound(scores);
@@ -98,6 +100,8 @@ function playGame() {
 
     console.log("Human Score: " + scores.human);
     console.log("Computer Score: " + scores.computer);
+    console.log("Ties: " + scores.ties);
+    console.log("Errors: " + scores.errors);
 }
 
 playGame();
