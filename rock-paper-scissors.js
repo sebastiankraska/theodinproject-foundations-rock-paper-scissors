@@ -62,25 +62,27 @@ let computerScore = 0;
     // increment humanScore and computerScore
 function playRound(userChoice, computerChoice) {
     console.log("Result of playRound function is: " + userChoice + " and " + computerChoice);
+
+    //  Evaluate winner / loser / ties / invalid combinations
+    if (computerChoice == userChoice) {
+        console.log("Tie! Computer and user chose " + userChoice);
+    } else if (gameRules.get(userChoice) == computerChoice) {
+        console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
+        humanScore++;
+    } else if (gameRules.get(computerChoice) == userChoice) {
+        console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
+        computerScore++;
+    } else {
+        console.log("Invalid combination / Error")
+    }
+
+    console.log("Human Score: " + humanScore);
+    console.log("Computer Score: " + computerScore)
 }
 
 playRound(userChoice, computerChoice)
 
-//  Evaluate winner / loser / ties / invalid combinations
-if (computerChoice == userChoice) {
-    console.log("Tie! Computer and user chose " + userChoice);
-} else if (gameRules.get(userChoice) == computerChoice) {
-    console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
-    humanScore++;
-} else if (gameRules.get(computerChoice) == userChoice) {
-    console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
-    computerScore++;
-} else {
-    console.log("Invalid combination / Error")
-}
 
-console.log("Human Score: " + humanScore);
-console.log("Computer Score: " + computerScore)
 
 // console.log("Key: " + computerChoice + "----- Value: " + gameRules.get(computerChoice))
 
