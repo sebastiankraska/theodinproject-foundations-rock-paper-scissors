@@ -63,11 +63,13 @@ let computerScore = 0;
 
 //  Evaluate winner / loser / ties / invalid combinations
 if (computerChoice == userChoice) {
-    console.log("Tie! Computer and user chose " + userChoice)
+    console.log("Tie! Computer and user chose " + userChoice);
 } else if (gameRules.get(userChoice) == computerChoice) {
-    console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)")
+    console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
+    humanScore++;
 } else if (gameRules.get(computerChoice) == userChoice) {
-    console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)")
+    console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
+    computerScore++;
 } else {
     console.log("Invalid combination / Error")
 }
