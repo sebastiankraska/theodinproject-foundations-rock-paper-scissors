@@ -24,7 +24,7 @@ function getComputerChoice() {
 
 // For testing purposes
 // const computerChoice = "rock"
-const computerChoice = getComputerChoice()
+// moved to playRound function
 
 
 // testing random Computer Choice
@@ -50,7 +50,7 @@ function getUserChoice() {
 
 // Disabled for testing purposes
 // userChoice = "scissors"
-const userChoice = getUserChoice()
+// moved to playRound function
 
 
 
@@ -58,7 +58,11 @@ const userChoice = getUserChoice()
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
-function playRound(userChoice, computerChoice) {
+function playRound() {
+
+    const computerChoice = getComputerChoice();
+    const userChoice = getUserChoice();
+
     console.log("Result of playRound function is: " + userChoice + " and " + computerChoice);
 
     //  Evaluate winner / loser / ties / invalid combinations
@@ -92,7 +96,7 @@ function playGame() {
     let computerScore = 0;
 
     for (let i = 0; i < 5; i++) {
-        playRound(userChoice, computerChoice);
+        playRound();
     };
 
     console.log("Human Score: " + humanScore);
