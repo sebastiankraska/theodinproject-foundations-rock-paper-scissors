@@ -35,50 +35,43 @@ function getComputerChoice() {
 
 // function getHumanChoice
 function getUserChoice() {
-    const choice = prompt("Enter your choice (rock, paper, scissors): "); // assume user always enters valid strings
-    return choice;
+    // old version
+    // const choice = prompt("Enter your choice (rock, paper, scissors): "); // The exercise assumes the user always enters a valid string
+    // new version with string interpolation:
+    const userchoice = prompt(`Enter your choice (${choices.join(", ")}): `); // Dynamically include choices in the prompt
+    return userchoice;
 }
 
 // For testing with static userChoice (no need to enter choice on every test)
 // userChoice = "scissors"
 
-// new function named playRound
-    // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
-    // write a message to console.log, e.g. "You lose, Paper beats Rock"
-    // increment humanScore and computerScore
 function playRound(scores, computerChoice, userChoice) {
-
-    //  Evaluate winner / loser / ties / invalid combinations
     if (computerChoice == userChoice) {
-        console.log("Tie! Both Computer and user chose " + userChoice);
+        console.log("IT'S A TIE! Both you and the computer chose " + userChoice + ".");
         scores.ties++;
     } else if (gameRules.get(userChoice) == computerChoice) {
-        console.log("You win! " + userChoice + " (UserChoice) beats " + computerChoice + " (ComputerChoice)");
+        console.log("YOU WIN! " + userChoice + " beats " + computerChoice + ".");
         scores.human++;
     } else if (gameRules.get(computerChoice) == userChoice) {
-        console.log("You lose! " + computerChoice + " (ComputerChoice) beats " + userChoice + "( UserChoice)");
+        console.log("YOU LOSE! " + computerChoice + " beats " + userChoice + ".");
         scores.computer++;
     } else {
-        console.log("Invalid combination / Error");
+        console.log("Invalid input / Error!");
         scores.errors++;
     }
-
 }
 
-// new function named playGame
-    // should contain playRound and both score variables
-    // Play 5 rounds
 function playGame() {
-    // Keep track of score with humanScore and computerScore
+    // declare starting scores
     const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
-
+    // play 5 rounds
     for (let i = 0; i < 5; i++) {
         const computerChoice = getComputerChoice();
         const userChoice = getUserChoice();
-        console.log("Userchoice is: " + userChoice + " ---- Computerchoice is: " + computerChoice);
         playRound(scores, computerChoice, userChoice);
     };
-
+    // Total results:
+    console.log("TOTAL SCORES:");
     console.log("Human Score: " + scores.human);
     console.log("Computer Score: " + scores.computer);
     console.log("Ties: " + scores.ties);
