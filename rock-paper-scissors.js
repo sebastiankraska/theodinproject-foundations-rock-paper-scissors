@@ -46,12 +46,7 @@ function getUserChoice() {
     // input: two paramters "humanChoice" (from getHumanChoice) and "computerChoice" (from getComputerChoice)
     // write a message to console.log, e.g. "You lose, Paper beats Rock"
     // increment humanScore and computerScore
-function playRound(scores) {
-
-    const computerChoice = getComputerChoice();
-    const userChoice = getUserChoice();
-
-    console.log("Result of playRound function is: " + userChoice + " and " + computerChoice);
+function playRound(scores, computerChoice, userChoice) {
 
     //  Evaluate winner / loser / ties / invalid combinations
     if (computerChoice == userChoice) {
@@ -78,7 +73,10 @@ function playGame() {
     const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
 
     for (let i = 0; i < 5; i++) {
-        playRound(scores);
+        const computerChoice = getComputerChoice();
+        const userChoice = getUserChoice();
+        console.log("Userchoice is: " + userChoice + " ---- Computerchoice is: " + computerChoice);
+        playRound(scores, computerChoice, userChoice);
     };
 
     console.log("Human Score: " + scores.human);
