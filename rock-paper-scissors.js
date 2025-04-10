@@ -64,8 +64,8 @@ function playRound(scores, computerChoice, userChoice) {
 function playGame() {
     // declare starting scores
     const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
-    // play 5 rounds
-    for (let i = 0; i < 5; i++) {
+    // play the game until one player reaches 5 points
+    while (!(scores.computer >= 5 || scores.human >= 5)) {
         const computerChoice = getComputerChoice();
         const userChoice = getUserChoice();
         playRound(scores, computerChoice, userChoice);
