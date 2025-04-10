@@ -79,3 +79,8 @@ function playGame() {
 }
 
 // playGame();
+
+const btnRock = document.querySelector('button[name="rock"]');
+btnRock.addEventListener('click', (event) => {
+    console.log(event.target.name);
+});
