@@ -78,4 +78,4 @@ function playGame() {
     console.log("Errors: " + scores.errors);
 }
 
-playGame();
+// playGame();
