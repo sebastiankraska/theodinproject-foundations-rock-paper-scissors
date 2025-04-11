@@ -61,9 +61,6 @@ function playRound() {
     } else if (gameRules.get(computerChoice) == userchoice) {
         console.log("YOU LOSE! " + computerChoice + " beats " + userchoice + ".");
         scores.computer++;
-    } else {
-        console.log("Invalid input / Error!");
-        scores.errors++;
     };
     checkScores();
 }
