@@ -40,16 +40,19 @@ function playRound() {
     if (computerChoice == userchoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
         paragraph.textContent = `IT'S A TIE! Both you and the computer chose ${userchoice}.`; // Set the message as the text content
+        paragraph.style.color = '#555'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.ties++;
     } else if (gameRules.get(userchoice) == computerChoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
         paragraph.textContent = `YOU WIN! ${userchoice} beats ${computerChoice}.`; // Set the message as the text content
+        paragraph.style.color = 'green'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.human++;
     } else if (gameRules.get(computerChoice) == userchoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
         paragraph.textContent = `YOU LOSE! ${computerChoice} beats ${userchoice}.`; // Set the message as the text content
+        paragraph.style.color = 'red'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.computer++;
     };
