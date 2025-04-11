@@ -64,7 +64,8 @@ function playRound() {
     } else {
         console.log("Invalid input / Error!");
         scores.errors++;
-    }
+    };
+    checkScores();
 }
 
 function checkScores() {
