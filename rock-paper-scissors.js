@@ -6,6 +6,9 @@ const gameRules = new Map([
     ["scissors", "paper"] // scissors beats paper
   ]);
 
+
+const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
+
 // test of accessing Map keys and values
 // for (const [key, value] of gameRules.entries()) {
 //     console.log(`${key} beats ${value}`);
@@ -61,21 +64,16 @@ function playRound(scores, computerChoice, userChoice) {
     }
 }
 
-function playGame() {
-    // declare starting scores
-    const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
+function checkScores() {
     // play the game until one player reaches 5 points
-    while (!(scores.computer >= 5 || scores.human >= 5)) {
-        const computerChoice = getComputerChoice();
-        const userChoice = getUserChoice();
-        playRound(scores, computerChoice, userChoice);
+    if (scores.computer >= 5 || scores.human >= 5) {
+        // Total results:
+        console.log("TOTAL SCORES:");
+        console.log("Human Score: " + scores.human);
+        console.log("Computer Score: " + scores.computer);
+        console.log("Ties: " + scores.ties);
+        console.log("Errors: " + scores.errors);
     };
-    // Total results:
-    console.log("TOTAL SCORES:");
-    console.log("Human Score: " + scores.human);
-    console.log("Computer Score: " + scores.computer);
-    console.log("Ties: " + scores.ties);
-    console.log("Errors: " + scores.errors);
 }
 
 // playGame();
