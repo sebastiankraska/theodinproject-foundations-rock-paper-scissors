@@ -25,7 +25,7 @@ function getComputerChoice() {
     return choices[randomIndex]; // returns rock, paper or scisscors
 };
 function playRound() {
-    console.log(event.target.name);
+    // console.log(event.target.name);
     const userchoice = event.target.name;
     const computerChoice = getComputerChoice();
     if (computerChoice == userchoice) {
@@ -55,3 +55,19 @@ btnPaper.addEventListener('click', playRound);
 btnScissors.addEventListener('click', playRound);
 
 const logArea = document.querySelector('div');
+
+let buttonarea = document.querySelector('#button-area');
+buttonarea.addEventListener('click', (event) => {
+    let target = event.target;
+    switch(target.id) {
+        case 'rock':
+            console.log('rock button was clicked');
+            break;
+        case 'paper':
+            console.log('paper button was clicked');
+            break;
+        case 'scissors':
+            console.log('scissors button was clicked');
+            break;
+    }
+});
