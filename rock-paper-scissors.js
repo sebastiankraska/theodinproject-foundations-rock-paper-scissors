@@ -30,6 +30,10 @@ function playRound() {
         scores.ties++;
     } else if (gameRules.get(userchoice) == computerChoice) {
         console.log("YOU WIN! " + userchoice + " beats " + computerChoice + ".");
+        const text = document.createTextNode(
+            "YOU WIN! " + userchoice + " beats " + computerChoice + ".",
+          );
+        logArea.appendChild(text);
         scores.human++;
     } else if (gameRules.get(computerChoice) == userchoice) {
         console.log("YOU LOSE! " + computerChoice + " beats " + userchoice + ".");
@@ -40,3 +44,5 @@ function playRound() {
 
 const btnRock = document.querySelector('button[name="rock"]');
 btnRock.addEventListener('click', playRound);
+
+const logArea = document.querySelector('div');
