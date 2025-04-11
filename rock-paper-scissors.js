@@ -36,27 +36,30 @@ function getComputerChoice() {
 // console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 // console.log(getComputerChoice()); // Outputs either "rock", "paper", or "scissors"
 
-// function getHumanChoice
-function getUserChoice() {
-    // old version
-    // const choice = prompt("Enter your choice (rock, paper, scissors): "); // The exercise assumes the user always enters a valid string
-    // new version with string interpolation:
-    const userchoice = prompt(`Enter your choice (${choices.join(", ")}): `); // Dynamically include choices in the prompt
-    return userchoice;
-}
+// // function getHumanChoice
+// function getUserChoice() {
+//     // old version
+//     // const choice = prompt("Enter your choice (rock, paper, scissors): "); // The exercise assumes the user always enters a valid string
+//     // new version with string interpolation:
+//     const userchoice = prompt(`Enter your choice (${choices.join(", ")}): `); // Dynamically include choices in the prompt
+//     return userchoice;
+// }
 
 // For testing with static userChoice (no need to enter choice on every test)
 // userChoice = "scissors"
 
-function playRound(scores, computerChoice, userChoice) {
-    if (computerChoice == userChoice) {
-        console.log("IT'S A TIE! Both you and the computer chose " + userChoice + ".");
+function playRound() {
+    console.log(event.target.name);
+    const userchoice = event.target.name;
+    const computerChoice = getComputerChoice();
+    if (computerChoice == userchoice) {
+        console.log("IT'S A TIE! Both you and the computer chose " + userchoice + ".");
         scores.ties++;
-    } else if (gameRules.get(userChoice) == computerChoice) {
-        console.log("YOU WIN! " + userChoice + " beats " + computerChoice + ".");
+    } else if (gameRules.get(userchoice) == computerChoice) {
+        console.log("YOU WIN! " + userchoice + " beats " + computerChoice + ".");
         scores.human++;
-    } else if (gameRules.get(computerChoice) == userChoice) {
-        console.log("YOU LOSE! " + computerChoice + " beats " + userChoice + ".");
+    } else if (gameRules.get(computerChoice) == userchoice) {
+        console.log("YOU LOSE! " + computerChoice + " beats " + userchoice + ".");
         scores.computer++;
     } else {
         console.log("Invalid input / Error!");
@@ -79,6 +82,4 @@ function checkScores() {
 // playGame();
 
 const btnRock = document.querySelector('button[name="rock"]');
-btnRock.addEventListener('click', (event) => {
-    console.log(event.target.name);
-});
+btnRock.addEventListener('click', playRound);
