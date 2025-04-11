@@ -5,8 +5,15 @@ const gameRules = new Map([
     ["scissors", "paper"] // scissors beats paper
   ]);
 const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
+const infoplayerscore = document.querySelector('#info-player-score');
+const infocomputerscore = document.querySelector('#info-computer-score');
+
 
 function checkScores() {
+
+    infoplayerscore.textContent = scores.human;
+    infocomputerscore.textContent = scores.computer;
+    
     // play the game until one player reaches 5 points
     if (scores.computer >= 5 || scores.human >= 5) {
         // console.log("TOTAL SCORES:");
@@ -54,7 +61,7 @@ btnRock.addEventListener('click', playRound);
 btnPaper.addEventListener('click', playRound);
 btnScissors.addEventListener('click', playRound);
 
-const logArea = document.querySelector('div');
+const logArea = document.querySelector('#log-area');
 
 let buttonarea = document.querySelector('#button-area');
 buttonarea.addEventListener('click', (event) => {
