@@ -23,9 +23,16 @@ function checkScores() {
         // console.log("Human Score: " + scores.human);
         // console.log("Computer Score: " + scores.computer);
         // console.log("Ties: " + scores.ties);
-        console.log("Errors: " + scores.errors);
+        // console.log("Errors: " + scores.errors);
         const paragraph = document.createElement("p");
-        paragraph.textContent = "TOTAL SCORES: " + "Human Score: " + scores.human + " Computer Score: " + scores.computer + " Ties: " + scores.ties
+        
+        if (scores.human >= 5) {
+            paragraph.textContent = "!!!!!!!!!!!!!! You reached 5 points. YOU WIN! CONGRATULATIONS!!!!!!!!!!!!!!! ";
+            paragraph.style.color = 'green';
+        } else {
+            paragraph.textContent = "!!!!!!!!!!!!!! Computer reached 5 points. YOU LOST THE GAME!!!!!!!!!!!!!!! ";
+            paragraph.style.color = 'red';
+        }
         logArea.appendChild(paragraph); // Append the <p> to the logArea
     };
 };
@@ -39,19 +46,19 @@ function playRound() {
     const userchoice = event.target.name;
     if (computerChoice == userchoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
-        paragraph.textContent = `IT'S A TIE! Both you and the computer chose ${userchoice}.`; // Set the message as the text content
+        paragraph.textContent = `This is a tie. Both you and the computer chose ${userchoice}.`; // Set the message as the text content
         paragraph.style.color = '#555'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.ties++;
     } else if (gameRules.get(userchoice) == computerChoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
-        paragraph.textContent = `YOU WIN! ${userchoice} beats ${computerChoice}.`; // Set the message as the text content
+        paragraph.textContent = `You've won this round! ${userchoice} beats ${computerChoice}.`; // Set the message as the text content
         paragraph.style.color = 'green'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.human++;
     } else if (gameRules.get(computerChoice) == userchoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
-        paragraph.textContent = `YOU LOSE! ${computerChoice} beats ${userchoice}.`; // Set the message as the text content
+        paragraph.textContent = `You've lost this round! ${computerChoice} beats ${userchoice}.`; // Set the message as the text content
         paragraph.style.color = 'red'
         logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.computer++;
