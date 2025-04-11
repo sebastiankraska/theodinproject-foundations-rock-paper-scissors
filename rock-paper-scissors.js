@@ -5,12 +5,15 @@ const gameRules = new Map([
     ["scissors", "paper"] // scissors beats paper
   ]);
 const scores = { human: 0, computer: 0, ties: 0, errors: 0 };
+
+// for controlling the display of scores on the page
 const infoplayerscore = document.querySelector('#info-player-score');
 const infocomputerscore = document.querySelector('#info-computer-score');
 
 
 function checkScores() {
 
+    // update scores on page
     infoplayerscore.textContent = scores.human;
     infocomputerscore.textContent = scores.computer;
     
@@ -32,9 +35,8 @@ function getComputerChoice() {
     return choices[randomIndex]; // returns rock, paper or scisscors
 };
 function playRound() {
-    // console.log(event.target.name);
-    const userchoice = event.target.name;
     const computerChoice = getComputerChoice();
+    const userchoice = event.target.name;
     if (computerChoice == userchoice) {
         const paragraph = document.createElement("p"); // Create a <p> element
         paragraph.textContent = `IT'S A TIE! Both you and the computer chose ${userchoice}.`; // Set the message as the text content
