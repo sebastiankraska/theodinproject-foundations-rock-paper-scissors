@@ -14,10 +14,9 @@ function checkScores() {
         // console.log("Computer Score: " + scores.computer);
         // console.log("Ties: " + scores.ties);
         console.log("Errors: " + scores.errors);
-        const text = document.createTextNode(
-            "TOTAL SCORES:" + "Human Score: " + scores.human + "Computer Score: " + scores.computer + "Ties: " + scores.ties,
-          );
-        logArea.appendChild(text);
+        const paragraph = document.createElement("p");
+        paragraph.textContent = "TOTAL SCORES: " + "Human Score: " + scores.human + " Computer Score: " + scores.computer + " Ties: " + scores.ties
+        logArea.appendChild(paragraph); // Append the <p> to the logArea
     };
 };
 function getComputerChoice() {
@@ -30,25 +29,19 @@ function playRound() {
     const userchoice = event.target.name;
     const computerChoice = getComputerChoice();
     if (computerChoice == userchoice) {
-        // console.log("IT'S A TIE! Both you and the computer chose " + userchoice + ".");
-        const text = document.createTextNode(
-            "IT'S A TIE! Both you and the computer chose " + userchoice + ".",
-          );
-        logArea.appendChild(text);
+        const paragraph = document.createElement("p"); // Create a <p> element
+        paragraph.textContent = `IT'S A TIE! Both you and the computer chose ${userchoice}.`; // Set the message as the text content
+        logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.ties++;
     } else if (gameRules.get(userchoice) == computerChoice) {
-        // console.log("YOU WIN! " + userchoice + " beats " + computerChoice + ".");
-        const text = document.createTextNode(
-            "YOU WIN! " + userchoice + " beats " + computerChoice + ".",
-          );
-        logArea.appendChild(text);
+        const paragraph = document.createElement("p"); // Create a <p> element
+        paragraph.textContent = `YOU WIN! ${userchoice} beats ${computerChoice}.`; // Set the message as the text content
+        logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.human++;
     } else if (gameRules.get(computerChoice) == userchoice) {
-        // console.log("YOU LOSE! " + computerChoice + " beats " + userchoice + ".");
-        const text = document.createTextNode(
-            "YOU LOSE! " + computerChoice + " beats " + userchoice + ".",
-          );
-        logArea.appendChild(text);
+        const paragraph = document.createElement("p"); // Create a <p> element
+        paragraph.textContent = `YOU LOSE! ${computerChoice} beats ${userchoice}.`; // Set the message as the text content
+        logArea.appendChild(paragraph); // Append the <p> to the logArea
         scores.computer++;
     };
     checkScores();
