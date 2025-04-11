@@ -55,6 +55,10 @@ function playRound() {
 }
 
 const btnRock = document.querySelector('button[name="rock"]');
+const btnPaper = document.querySelector('button[name="paper"]');
+const btnScissors = document.querySelector('button[name="scissors"]');
 btnRock.addEventListener('click', playRound);
+btnPaper.addEventListener('click', playRound);
+btnScissors.addEventListener('click', playRound);
 
 const logArea = document.querySelector('div');
